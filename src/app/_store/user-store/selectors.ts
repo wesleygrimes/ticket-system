@@ -15,5 +15,5 @@ export const selectUserError = createSelector(
 
 export const selectUserIsLoading = createSelector(
   selectUserState,
-  (state: State): boolean => state.isLoading
+  (state: State): boolean => state.isLoading || false
 );
