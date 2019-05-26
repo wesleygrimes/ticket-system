@@ -16,8 +16,4 @@ export const routes: Routes = [
     path: 'tickets/:id',
     component: TicketDetailComponent
   }
-  // {
-  //   path: 'tickets/create',
-  //   component: TicketCreateComponent
-  // }
 ];
