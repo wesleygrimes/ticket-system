@@ -51,7 +51,6 @@ export function featureReducer(
     case ActionTypes.ASSIGN_TICKET: {
       return {
         ...state,
-        isLoading: true,
         error: null
       };
     }

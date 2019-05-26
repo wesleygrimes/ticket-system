@@ -1,12 +1,16 @@
-<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="isLoading">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
 
 <table *ngIf="!isLoading" class="table">
   <thead class="thead-dark">
     <tr>
       <th></th>
-      <th>Assignee</th>
+      <th>ID</th>
+      <th>Assigned</th>
       <th>Completed</th>
-      <th>Description</th>
     </tr>
   </thead>
   <tbody>
@@ -23,12 +27,12 @@
           *ngIf="!ticket.completed"
           (click)="complete.emit(ticket.id)"
         >
-          Complete
+          Mark Complete
         </button>
       </td>
+      <td>{{ ticket.id }}</td>
       <td>{{ ticket.assigneeName }}</td>
       <td>{{ ticket.completed ? 'Yes' : 'No' }}</td>
-      <td>{{ ticket.description }}</td>
     </tr>
   </tbody>
 </table>
