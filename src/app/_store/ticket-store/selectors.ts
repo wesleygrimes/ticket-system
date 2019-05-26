@@ -15,7 +15,7 @@ export const selectTicketError = createSelector(
 
 export const selectTicketIsLoading = createSelector(
   selectTicketState,
-  (state: State): boolean => state.isLoading 
+  (state: State): boolean => state.isLoading || false
 );
 
 export const selectTicketCurrentTicketId = createSelector(
