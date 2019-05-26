@@ -1,0 +1,21 @@
+<div
+  class="row"
+  *ngIf="ticketWithUser$ | async as ticketWithUser; else loading"
+>
+  <div class="col">
+    <h2>ID: {{ ticketWithUser.id }}</h2>
+    <br />
+    Assignee: {{ ticketWithUser.assigneeName }}<br />
+    Completed: {{ ticketWithUser.completed }}<br />
+    Description: {{ ticketWithUser.description }}
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col"><a [routerLink]="['/tickets']">Back to List</a></div>
+</div>
+<ng-template #loading>
+  <div>
+    Loading Ticket...
+  </div>
+</ng-template>

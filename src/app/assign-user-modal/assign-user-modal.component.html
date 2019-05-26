@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title">Assign User for Ticket: {{ ticketId }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body" *ngIf="users$ | async as users; else loading">
+  <div class="form-row">
+    <div class="form-group col">
+      <label for="assigneeId">Assignee</label>
+      <select
+        class="form-control"
+        name="assigneeId"
+        [(ngModel)]="selectedAssignee"
+      >
+        <option value=""></option>
+        <option *ngFor="let user of users" [value]="user.id">{{
+          user.name
+        }}</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  <div class="modal-body">
+    Loading...
+  </div>
+</ng-template>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="assign()">
+    Assign User
+  </button>
+  <button type="button" class="btn btn-secondary" (click)="cancel()">
+    Cancel
+  </button>
+</div>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary" (click)="createTicket()">Create New</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-6">
+    <app-ticket-list-filter-form
+      [currentFilter]="currentFilter$ | async"
+      [users]="users$ | async"
+      (filter)="onFilterTickets($event)"
+    ></app-ticket-list-filter-form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-ticket-list-grid
+      [ticketsWithUsers]="ticketsWithUsers$ | async"
+      [isLoading]="isLoading$ | async"
+      (view)="onViewTicket($event)"
+      (assign)="onAssignTicket($event)"
+      (complete)="onCompleteTicket($event)"
+    ></app-ticket-list-grid>
+  </div>
+</div>
