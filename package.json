@@ -11,7 +11,7 @@
     "@ngrx/store": "7.4.0",
     "@types/node": "8.9.5",
     "@ngrx/entity": "7.4.0",
-    "@angular/core": "7.2.15",
+    "@angular/core": "11.0.5",
     "@ngrx/effects": "7.4.0",
     "@angular/forms": "7.2.15",
     "@types/jasmine": "2.8.16",
